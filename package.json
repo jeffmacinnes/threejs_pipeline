@@ -1,0 +1,27 @@
+{
+  "name": "bloomberg_nef_2022",
+  "version": "1.0.0",
+  "description": "## Running",
+  "type": "module",
+  "scripts": {
+    "pipeline": "nodemon pipelineServer.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "csvtojson": "^2.0.10",
+    "d3": "^7.6.1",
+    "express": "^4.18.1",
+    "fast-csv": "^4.3.6",
+    "fs": "^0.0.1-security",
+    "html-to-image": "^1.10.8",
+    "moment": "^2.29.4",
+    "multer": "^1.4.5-lts.1",
+    "node-fetch": "^3.2.10",
+    "nodemon": "^2.0.20",
+    "puppeteer": "^18.2.1",
+    "puppeteer-cluster": "^0.23.0",
+    "socket.io": "^4.5.2",
+    "winston": "^3.8.2"
+  }
+}

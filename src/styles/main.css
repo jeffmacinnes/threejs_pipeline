@@ -1,0 +1,38 @@
+@import url('./variables.css');
+@import url('./fonts.css');
+@import url('./overlay.css');
+/* @import url('./annotation.css'); */
+/* @import url('./titles.css'); */
+@import url('./editor.css');
+
+html,
+body {
+  margin: 0;
+}
+
+body {
+  box-sizing: border-box;
+  background-color: #333;
+  font-family: 'NHaas Grotesk Bold', sans-serif;
+}
+
+#root.debug {
+  border: solid 1px white;
+}
+
+#config-container {
+  color: white;
+  font-family: 'NHaas Grotesk Light', sans-serif;
+  font-size: 42px;
+  margin: 30px;
+}
+
+#config-container .label {
+  display: inline-block;
+  margin-right: 5px;
+  font-family: 'NHaas Grotesk Bold', sans-serif;
+}
+
+.pointer {
+  cursor: pointer;
+}

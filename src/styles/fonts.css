@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'NHaas Grotesk Thin';
+  src: url('../assets/fonts/NHaasGroteskDSPro-25Th.otf') format('woff');
+}
+@font-face {
+  font-family: 'NHaas Grotesk Light';
+  src: url('../assets/fonts/NHaasGroteskDSPro-45Lt.otf') format('woff');
+}
+@font-face {
+  font-family: 'NHaas Grotesk Roman';
+  src: url('../assets/fonts/NHaasGroteskDSPro-55Rg.otf') format('woff');
+}
+@font-face {
+  font-family: 'NHaas Grotesk Bold';
+  src: url('../assets/fonts/NHaasGroteskDSPro-75bd.otf') format('woff');
+}
+@font-face {
+  font-family: 'NHaas Grotesk Black';
+  src: url('../assets/fonts/NHaasGroteskDSPro-95Blk.otf') format('woff');
+}

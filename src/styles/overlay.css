@@ -1,0 +1,310 @@
+#overlay-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  align-content: space-between;
+  align-items: start;
+  color: var(--color-palePaperBlue);
+  padding: 36px 80px 60px;
+}
+
+#curtain {
+  pointer-events: none;
+}
+
+.overlay-middle {
+  overflow: hidden;
+}
+
+/* ------- HED (top left) --------- */
+#hed {
+  position: relative;
+  grid-column: 1;
+  grid-row: 1;
+  width: 1000px;
+  font-family: 'NHaas Grotesk Black';
+  font-size: 56;
+  line-height: 110%;
+}
+
+/* ------- DEK (top right) --------- */
+#dek {
+  position: relative;
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
+  width: 90%; /* pull it rightward away from the midline of the overlay container */
+  font-family: 'NHaas Grotesk Thin';
+  font-size: 24px;
+  line-height: 125%;
+  letter-spacing: 1px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#dek .overlay-inner {
+  box-sizing: border-box;
+  padding-left: 24px;
+  border-left: solid 2px var(--color-palePaperBlue);
+}
+
+/* ------- AUX (bottom left) --------- */
+#aux-container {
+  position: relative;
+  grid-column: 1;
+  grid-row: 2;
+  height: 100%;
+  width: 334px;
+}
+
+#aux-container .overlay-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+#aux-container .overlay-inner > * {
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#value-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#value-units {
+  font-family: 'NHaas Grotesk Roman';
+  font-size: 18px;
+  line-height: 120%;
+  letter-spacing: 0.75px;
+}
+
+#value {
+  font-family: 'NHaas Grotesk Thin';
+  font-size: 60px;
+  line-height: 100%;
+}
+
+#legend {
+  max-width: 100%;
+  height: auto;
+}
+
+#source {
+  font-family: 'NHaas Grotesk Thin';
+  font-size: 12px;
+}
+
+/* ------- YEAR (bottom right) --------- */
+#year {
+  position: relative;
+  grid-column: 2;
+  grid-row: 2;
+  align-self: end;
+  justify-self: end;
+  font-family: 'NHaas Grotesk Thin';
+  font-size: 110;
+  line-height: 0.8; /* this lines it up on the bottom */
+}
+
+#year .overlay-inner {
+  box-sizing: border-box;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* --- FORMAT SPECIFIC STYLE ADJUSTMENTS ------------------------------------ */
+/* to select: #<id>.<format>, e.g. #hed.HD */
+/* --- 4K --- */
+:root {
+  --fourk-scale: 2;
+}
+
+#overlay-container.fourK {
+  padding: calc(36px * var(--fourk-scale)) calc(80px * var(--fourk-scale))
+    calc(60px * var(--fourk-scale));
+}
+
+#hed.fourK {
+  width: 2000px;
+  font-size: calc(56px * var(--fourk-scale));
+}
+
+#dek.fourK {
+  font-size: calc(24px * var(--fourk-scale));
+  letter-spacing: calc(1px * var(--fourk-scale));
+}
+
+#dek.fourk .overlay-inner {
+  padding-left: calc(24px * var(--fourk-scale));
+  border-left: solid calc(2px * var(--fourk-scale)) var(--color-palePaperBlue);
+}
+
+#aux-container.fourK {
+  width: calc(334px * var(--fourk-scale));
+}
+
+#aux-container.fourK .overlay-inner {
+  gap: calc(16px * var(--fourk-scale));
+}
+
+#aux-container.fourK .overlay-inner > * {
+  padding: calc(20px * var(--fourk-scale));
+}
+
+#value-container.fourK {
+  gap: calc(8px * var(--fourk-scale));
+}
+
+#value-units.fourK {
+  font-size: calc(18px * var(--fourk-scale));
+  letter-spacing: calc(0.75px * var(--fourk-scale));
+}
+
+#value.fourK {
+  font-size: calc(60px * var(--fourk-scale));
+}
+
+#source.fourK {
+  font-size: calc(12px * var(--fourk-scale));
+}
+
+#year.fourK {
+  font-size: calc(110px * var(--fourk-scale));
+}
+
+#year.fourK .overlay-inner {
+  padding: calc(20px * var(--fourk-scale));
+}
+
+/* --- Foyer --- */
+:root {
+  --foyer-scale: 1.5;
+}
+
+#overlay-container.foyer {
+  padding: calc(36px * var(--foyer-scale)) calc(80px * var(--foyer-scale))
+    calc(60px * var(--foyer-scale));
+}
+
+#hed.foyer {
+  width: 2000px;
+  font-size: calc(56px * var(--foyer-scale));
+}
+
+#dek.foyer {
+  font-size: calc(24px * var(--foyer-scale));
+  letter-spacing: calc(1px * var(--foyer-scale));
+}
+
+#dek.foyer .overlay-inner {
+  padding-left: calc(24px * var(--foyer-scale));
+  border-left: solid calc(2px * var(--foyer-scale)) var(--color-palePaperBlue);
+}
+
+#aux-container.foyer {
+  width: calc(334px * var(--foyer-scale));
+}
+
+#aux-container.foyer .overlay-inner {
+  gap: calc(16px * var(--foyer-scale));
+}
+
+#aux-container.foyer .overlay-inner > * {
+  padding: calc(20px * var(--foyer-scale));
+}
+
+#value-container.foyer {
+  gap: calc(8px * var(--foyer-scale));
+}
+
+#value-units.foyer {
+  font-size: calc(18px * var(--foyer-scale));
+  letter-spacing: calc(0.75px * var(--foyer-scale));
+}
+
+#value.foyer {
+  font-size: calc(60px * var(--foyer-scale));
+}
+
+#source.foyer {
+  font-size: calc(12px * var(--foyer-scale));
+}
+
+#year.foyer {
+  font-size: calc(110px * var(--foyer-scale));
+}
+
+#year.foyer .overlay-inner {
+  padding: calc(20px * var(--foyer-scale));
+}
+
+/* --- Plenary --- */
+:root {
+  --plenary-scale: 2;
+}
+
+#overlay-container.plenary {
+  padding-top: calc(36px * var(--plenary-scale));
+  padding-left: calc(2784px + (80px * var(--plenary-scale))); /* middle 50% of screen */
+  padding-right: calc(2784px + (80px * var(--plenary-scale)));
+  padding-bottom: calc(60px * var(--plenary-scale));
+}
+
+#hed.plenary {
+  width: 2000px;
+  font-size: calc(56px * var(--plenary-scale));
+}
+
+#dek.plenary {
+  font-size: calc(24px * var(--plenary-scale));
+  letter-spacing: calc(1px * var(--plenary-scale));
+}
+
+#dek.plenary .overlay-inner {
+  padding-left: calc(24px * var(--plenary-scale));
+  border-left: solid calc(2px * var(--plenary-scale)) var(--color-palePaperBlue);
+}
+
+#aux-container.plenary {
+  width: calc(334px * var(--plenary-scale));
+}
+
+#aux-container.plenary .overlay-inner {
+  gap: calc(16px * var(--plenary-scale));
+}
+
+#aux-container.plenary .overlay-inner > * {
+  padding: calc(20px * var(--plenary-scale));
+}
+
+#value-container.plenary {
+  gap: calc(8px * var(--plenary-scale));
+}
+
+#value-units.plenary {
+  font-size: calc(18px * var(--plenary-scale));
+  letter-spacing: calc(0.75px * var(--plenary-scale));
+}
+
+#value.plenary {
+  font-size: calc(60px * var(--plenary-scale));
+}
+
+#source.plenary {
+  font-size: calc(12px * var(--plenary-scale));
+}
+
+#year.plenary {
+  font-size: calc(110px * var(--plenary-scale));
+}
+
+#year.plenary .overlay-inner {
+  padding: calc(20px * var(--plenary-scale));
+}

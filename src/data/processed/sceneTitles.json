@@ -1,0 +1,9 @@
+[
+  {
+    "theme": "sampleTheme",
+    "shortName": "sample",
+    "HED": "This is the sample scene",
+    "DEK": "This is the sample scene subtitle",
+    "source": "This is the data source for the sample scene"
+  }
+]

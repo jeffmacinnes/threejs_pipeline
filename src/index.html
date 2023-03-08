@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>RAA FII Miami 2023</title>
+    <style>
+      body {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- required libraries (changed to local copies to be independent of cdn network issues) -->
+    <script type="importmap">
+      {
+        "imports": {
+          "d3": "https://cdn.skypack.dev/d3@7",
+          "lodash": "./lib/lodash/lodash.js",
+          "nanoevents": "./lib/nanoevents/index.js",
+          "three": "./lib/three.module.js",
+          "tween": "./lib/tween.esm.js",
+          "vue": "./lib/vue.esm-browser.prod.js",
+          "cannon": "./lib/cannon-es.min.js",
+          "socket.io-client": "./lib/socket.io.esm.min.js"
+        }
+      }
+    </script>
+
+    <!-- 
+      // orignal imports, using cdn
+      <script type="importmap">
+      {
+        "imports": {
+          "d3": "https://cdn.skypack.dev/d3@7",
+          "lodash": "https://cdn.jsdelivr.net/npm/lodash-es@4.17.21/lodash.min.js",
+          "nanoevents": "https://unpkg.com/nanoevents@7.0.1/index.js",
+          "three": "https://unpkg.com/three@0.144.0/build/three.module.js",
+          "tween": "https://cdnjs.cloudflare.com/ajax/libs/tween.js/18.6.4/tween.esm.js",
+          "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.prod.js",
+          "cannon": "https://cdn.jsdelivr.net/npm/cannon-es@0.20.0/dist/cannon-es.min.js",
+          "socket.io-client": "https://cdn.socket.io/4.4.1/socket.io.esm.min.js"
+        }
+      }
+    </script>
+
+     -->
+
+    <!-- GSAP still loaded this way. Can't find a way to make it work with importmap above yet.... -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="./lib/html2canvas.min.js"></script>
+
+    <link rel="stylesheet" href="styles/main.css" />
+
+    <!-- run mains THREE scene  -->
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

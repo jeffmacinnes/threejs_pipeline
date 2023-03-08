@@ -1,0 +1,28 @@
+#annotation {
+  color: var(--color-palePaperBlue);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* translate so the abs positoning applies to the CENTER of the div */
+  transform: translate(-50%, -50%);
+}
+
+/* ------- Annotation Value ---------- */
+#annotation-value {
+  font-family: 'NHaas Grotesk Thin';
+}
+
+#annotation-value.HD {
+  font-size: 130px;
+}
+
+/* ------- Annotation Units ---------- */
+#annotation-unit {
+  font-family: 'NHaas Grotesk Light';
+}
+
+#annotation-unit.HD {
+  text-transform: capitalize;
+  font-size: 30px;
+}
