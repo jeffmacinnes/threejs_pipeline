@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { config } from './config.js';
 import { getThemeByScene } from './utils/sceneThemeMappings.js';
 import World from './world/World.js';
@@ -6,6 +7,12 @@ import World from './world/World.js';
 function loadTexture(path) {
   return new Promise((resolve) => {
     new THREE.TextureLoader().load(path, resolve);
+  });
+}
+
+function loadModel(path) {
+  return new Promise((resolve) => {
+    new GLTFLoader().load(path, resolve);
   });
 }
 
@@ -64,6 +71,14 @@ function launch() {
   promises.push(
     loadTexture('assets/images/earth_texture.png').then((texture) => {
       config.earthTexture = texture;
+    })
+  );
+
+  // --- Load the model
+  // TODO: selectively load models based on current config.scene....
+  promises.push(
+    loadModel('assets/models/space_shuttle.glb').then((model) => {
+      config.model = model;
     })
   );
 

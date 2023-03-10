@@ -9,14 +9,22 @@
     </style>
   </head>
   <body>
-    <!-- required libraries (changed to local copies to be independent of cdn network issues) -->
+    <!-- required libraries (changed to local copies to be independent of cdn network issues) 
+      In most cases, the module version of each library was found online and downloaded to the 'lib'
+      directory. 
+
+      For threejs, downloaded the full three.js repo, then selectively moved the 'three/build' and 
+      'three/examples/jsm' folders to a dir called 'three_r150' in the local 'lib' folder. This way we have
+      the main three module as well as all additional threejs utilities (e.g. loaders, cameraControls, etc) 
+    -->
     <script type="importmap">
       {
         "imports": {
           "d3": "https://cdn.skypack.dev/d3@7",
           "lodash": "./lib/lodash/lodash.js",
           "nanoevents": "./lib/nanoevents/index.js",
-          "three": "./lib/three.module.js",
+          "three": "./lib/three_r150/build/three.module.js",
+          "three/addons/": "./lib/three_r150/examples/jsm/",
           "tween": "./lib/tween.esm.js",
           "vue": "./lib/vue.esm-browser.prod.js",
           "cannon": "./lib/cannon-es.min.js",

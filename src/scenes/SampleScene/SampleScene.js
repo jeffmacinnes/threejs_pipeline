@@ -13,6 +13,8 @@ export default class SampleScene {
     // prep data
     this.data = data;
 
+    console.log(this.config.model);
+
     // construct scene objects, add animations, init everythign
     this.makeTheModel();
     this.buildAnimations();
@@ -26,14 +28,17 @@ export default class SampleScene {
     // add a box for each data entry
     this.boxes = [];
     this.data.forEach((d, i) => {
-      let geo = new THREE.BoxGeometry(50, 50, 50);
-      let mat = new THREE.MeshStandardMaterial({
-        color: color.magenta.hex,
-        transparent: true,
-        opacity: 0.8
-      });
-      let mesh = new THREE.Mesh(geo, mat);
+      // let geo = new THREE.BoxGeometry(50, 50, 50);
+      // let mat = new THREE.MeshStandardMaterial({
+      //   color: color.magenta.hex,
+      //   transparent: true,
+      //   opacity: 0.8
+      // });
+      // let mesh = new THREE.Mesh(geo, mat);
+
+      let mesh = this.config.model.scene.clone();
       mesh.position.set(i * 100, 0, 0);
+      mesh.scale.set(100, 100, 100);
 
       // store in array for easy reference later
       this.boxes.push({
