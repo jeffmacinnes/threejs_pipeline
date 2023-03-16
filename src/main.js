@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
 import { config } from './config.js';
 import { getThemeByScene } from './utils/sceneThemeMappings.js';
 import World from './world/World.js';
@@ -12,7 +13,10 @@ function loadTexture(path) {
 
 function loadModel(path) {
   return new Promise((resolve) => {
-    new GLTFLoader().load(path, resolve);
+    // Draco loader to uncompress optimized glb files using gltf-transform: https://gltf-transform.donmccurdy.com/cli.html
+    const dracoLoader = new DRACOLoader();
+    dracoLoader.setDecoderPath('./lib/three_r150/examples/jsm/libs/draco/');
+    new GLTFLoader().setDRACOLoader(dracoLoader).load(path, resolve);
   });
 }
 
@@ -77,7 +81,7 @@ function launch() {
   // --- Load the model
   // TODO: selectively load models based on current config.scene....
   promises.push(
-    loadModel('assets/models/space_shuttle.glb').then((model) => {
+    loadModel('assets/models/boots-compressed.glb').then((model) => {
       config.model = model;
     })
   );

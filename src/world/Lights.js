@@ -32,7 +32,7 @@ export default class Lights {
     backLight.position.set(0, 100, -150);
     this.obj.add(backLight);
 
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.15);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 1.15);
     this.obj.add(ambientLight);
   }
 

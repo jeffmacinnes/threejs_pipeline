@@ -43,8 +43,16 @@ export default class World {
     if (this.config.scene === 'sample')
       this.theWorld.fog = new THREE.Fog(color.black.hex, -200, 700);
 
-    // create overlay class
-    this.overlay = new Overlay(this.config);
+    //create overlay class
+    if (this.config.debug) {
+      this.overlay = {
+        init: () => null,
+        update: () => null
+      };
+    } else {
+      this.overlay = new Overlay(this.config);
+    }
+    // this.overlay = new Overlay(this.config);
 
     // setup camera
     this.setupCamera();

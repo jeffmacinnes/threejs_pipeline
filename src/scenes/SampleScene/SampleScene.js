@@ -37,7 +37,17 @@ export default class SampleScene {
       // let mesh = new THREE.Mesh(geo, mat);
 
       let mesh = this.config.model.scene.clone();
-      mesh.position.set(i * 100, 0, 0);
+
+      // update material
+      mesh.traverse((o) => {
+        if (o.isMesh) {
+          o.material = new THREE.MeshStandardMaterial({
+            color: color.cyan.hex
+          });
+        }
+      });
+
+      mesh.position.set(i * 200, 0, 0);
       mesh.scale.set(100, 100, 100);
 
       // store in array for easy reference later
