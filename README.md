@@ -1,4 +1,4 @@
-# RAA FII Miami 2023
+# THREE JS Rendering Pipeline
 
 ## Setup
 
